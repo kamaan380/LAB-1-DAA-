@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+int linearsearch(int n, int key, int a[])
+{
+    int i = 0;
+    if (n > 0)
+    {
+        while (key != a[i] && i < n)
+        {
+            i++;
+        }
+        if (key == a[i])
+        {
+            return i;
+        }
+        else
+            printf("Key not found ");
+        return -1;
+    }
+    return -1;
+}
+int main()
+{
+    int key, a[1000], n, i;
+    printf("Enter size of array:");
+    scanf("%d", &n);
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d", &a[i]);
+    }
+    printf("Enter key to be searched:");
+    scanf("%d", &key);
+    i = linearsearch(n, key, a);
+    if (i >= 0)
+    {
+        printf("Index number is %d ", i);
+    }
+}
